@@ -1,12 +1,28 @@
 import { useState } from 'react';
 import './App.css';
-import Card from './utils/helper'; 
+import Card from './utils/helper';
 import { blocksCards, pagesCards, templatesCards } from './utils/helper';
+import Filter from './components/Filter';
 
 
 // Modal Component
 const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
+  const [selectedCategory, setSelectedCategory] = useState('');
   if (!show) return null;
+
+
+
+
+  const getCategories = () => {
+    // Mock categories for example purposes
+    return ['Category 1', 'Category 2', 'Category 3'];
+  };
+
+  const filterCards = (cards) => {
+    if (!selectedCategory) return cards;
+    return cards.filter(card => card.category === selectedCategory);
+  };
+
 
   // Function to render cards based on active section
   const renderCards = () => {
@@ -26,15 +42,21 @@ const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
         return <p>Select a section to view cards.</p>;
     }
 
+
+    // Apply the selected category filter
+    cards = filterCards(cards);
+
+
+
     // Handle card click event
     const handleCardClick = (index) => {
       // Example: open a page based on card index or content
       alert(`Card ${index + 1} clicked in ${activeSection} section`);
-      // Add your logic to open corresponding page or perform actions
     };
 
     return <Card cards={cards} onClick={handleCardClick} />;
-  }; 
+  };
+
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -79,7 +101,15 @@ const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
           </div>
         </nav>
 
-        <h2>Modal Title</h2>
+        {activeSection === 'Blocks' && (
+          <Filter
+            categories={getCategories()}
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+          />
+        )}
+
+        {/* <h2>Modal Title</h2> */}
         {renderCards()}
       </div>
     </div>

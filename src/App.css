@@ -1,4 +1,5 @@
- .App {
+
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,4 +197,17 @@
 .btn-favorite:hover {
   background: gold;
 } 
+  
 
+
+/* Add to your App.css or a new file */
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
