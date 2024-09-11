@@ -1,4 +1,3 @@
-
 .App {
   display: flex;
   flex-direction: column;
@@ -120,6 +119,32 @@
   border-bottom: 2px solid #0056b3;
 }
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.search-container {
+  /* flex: 1; */
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
 .cards-container {
   display: flex;
   gap: 10px;
@@ -196,18 +221,4 @@
 
 .btn-favorite:hover {
   background: gold;
-} 
-  
-
-
-/* Add to your App.css or a new file */
-.filter-container {
-  margin-bottom: 20px;
-}
-
-.filter-select {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
 }

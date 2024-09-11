@@ -4,14 +4,11 @@ import Card from './utils/helper';
 import { blocksCards, pagesCards, templatesCards } from './utils/helper';
 import Filter from './components/Filter';
 
-
 // Modal Component
 const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   if (!show) return null;
-
-
-
 
   const getCategories = () => {
     // Mock categories for example purposes
@@ -19,10 +16,14 @@ const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
   };
 
   const filterCards = (cards) => {
-    if (!selectedCategory) return cards;
-    return cards.filter(card => card.category === selectedCategory);
+    if (selectedCategory) {
+      cards = cards.filter(card => card.category === selectedCategory);
+    }
+    if (searchQuery) {
+      cards = cards.filter(card => card.title.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    return cards;
   };
-
 
   // Function to render cards based on active section
   const renderCards = () => {
@@ -42,11 +43,8 @@ const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
         return <p>Select a section to view cards.</p>;
     }
 
-
-    // Apply the selected category filter
+    // Apply the selected category filter and search query
     cards = filterCards(cards);
-
-
 
     // Handle card click event
     const handleCardClick = (index) => {
@@ -56,7 +54,6 @@ const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
 
     return <Card cards={cards} onClick={handleCardClick} />;
   };
-
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -101,15 +98,29 @@ const Modal = ({ show, onClose, activeSection, onSectionChange }) => {
           </div>
         </nav>
 
-        {activeSection === 'Blocks' && (
-          <Filter
-            categories={getCategories()}
-            selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
-          />
-        )}
+        <div className="modal-header">
+          {activeSection === 'Blocks' && (
+            <>
+              <div className="filter-container">
+                <Filter
+                  categories={getCategories()}
+                  selectedCategory={selectedCategory}
+                  onCategoryChange={setSelectedCategory}
+                />
+              </div>
+              <div className="search-container">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-input"
+                />
+              </div>
+            </>
+          )}
+        </div>
 
-        {/* <h2>Modal Title</h2> */}
         {renderCards()}
       </div>
     </div>
