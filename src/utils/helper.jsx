@@ -58,4 +58,3 @@ export const templatesCards = [
   { imgUrl: 'https://i.ibb.co.com/4PCfpVt/FB-IMG-1624863412855.jpg', isPro: true },
   { imgUrl: 'https://i.ibb.co.com/SwK2ZHh/FB-IMG-1633610946387.jpg', isPro: false },
 ];
-
