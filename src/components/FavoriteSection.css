@@ -1,0 +1,53 @@
+.favorite-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .favorite-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .favorite-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .favorite-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.333% - 20px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .favorite-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .favorite-card-info {
+    padding: 15px;
+  }
+  
+  .favorite-card-title {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .favorite-card-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .no-favorites {
+    text-align: center;
+    color: #888;
+  }
+  

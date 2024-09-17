@@ -1,29 +1,3 @@
-import React from 'react';
-import { MdFavoriteBorder } from "react-icons/md";
-
-const Card = ({ cards, onClick }) => {
-  return (
-    <div className="cards-container">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className={`card ${card.isPro ? 'pro-card' : ''}`}
-          onClick={() => onClick(index)}
-        >
-          <img src={card.imgUrl} alt={`Card ${index}`} className="card-image" />
-          {card.isPro && <span className="pro-badge">Pro</span>}
-          <div className="card-overlay">
-            <button className="btn-go-pro">Go Pro</button>
-            <button className="btn-favorite"><MdFavoriteBorder /></button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default Card;
-
 
 
 // Sample card data for each section
