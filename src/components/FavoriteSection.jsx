@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './FavoriteSection.css'; // Assuming you have a CSS file for styling
 
-const FavoriteSection = () => {
-  const [favoriteCards, setFavoriteCards] = useState([]);
+const FavoriteSection = ({data}) => {
+  const [favoriteCards, setFavoriteCards] = useState(data ?? []);
 
-  useEffect(() => {
-    // Get favorite cards from localStorage
-    const savedFavorites = JSON.parse(localStorage.getItem('favoriteCards')) || [];
-    setFavoriteCards(savedFavorites);
-  }, []);
 
   return (
     <div className="favorite-section">
@@ -22,6 +17,7 @@ const FavoriteSection = () => {
               <div className="favorite-card-info">
                 <h5 className="favorite-card-title">{card.title}</h5>
                 <p className="favorite-card-description">{card.description}</p>
+                
               </div>
             </div>
           ))
@@ -34,7 +30,7 @@ const FavoriteSection = () => {
 };
 
 FavoriteSection.propTypes = {
-  favoriteCards: PropTypes.array
+  data: PropTypes.array
 };
 
 export default FavoriteSection;

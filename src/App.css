@@ -1,5 +1,4 @@
 
-  /* General App Layout */
 .App {
   display: flex;
   flex-direction: column;
@@ -9,10 +8,10 @@
   margin-left: 550px;
 }
 
-/* Open Modal Button */
+
 .open-modal-button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 16px 16px;
+  font-size: 12px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -25,39 +24,39 @@
   background-color: #0056b3;
 }
 
-/* Modal Overlay */
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
-/* Modal Content */
+
 .modal-content {
   position: relative;
   background: white;
-  padding: 20px;
+  padding: 16px;
   border-radius: 8px;
   max-width: 800px;
   width: 90%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Modal Navbar */
+
 .modal-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 16px 0;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .nav-left,
@@ -68,10 +67,10 @@
 }
 
 .nav-left {
-  gap: 10px;
+  gap: 6px;
 }
 
-/* Navigation Logo */
+
 .nav-logo {
   width: 30px;
   height: 30px;
@@ -84,16 +83,16 @@
   font-weight: bold;
 }
 
-/* Navigation Name */
+
 .nav-name {
   font-size: 18px;
   font-weight: bold;
   color: #333;
 }
 
-/* Navigation Items */
+
 .nav-item {
-  margin: 0 10px;
+  margin: 0 16px;
   cursor: pointer;
   font-weight: bold;
   color: #007bff;
@@ -103,17 +102,17 @@
 .nav-item.active {
   font-weight: bold;
   color: #0056b3;
-  border-bottom: 2px solid #0056b3;
+  border-bottom: 1px solid #0056b3;
 }
 
 .nav-item:hover {
-  color: #0056b3;
+  color: #2a2a28;
 }
 
-/* Navigation Icons */
+
 .nav-icon {
-  font-size: 18px;
-  margin-left: 15px;
+  font-size: 14px;
+  margin-left: 16px;
   cursor: pointer;
   color: #007bff;
   transition: color 0.3s ease;
@@ -126,7 +125,7 @@
 .close-button {
   background: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   color: #333;
@@ -135,23 +134,19 @@
 .close-button:hover {
   color: #ff0000;
 }
-
-/* Filter, Favorite, and Search Container */
 .options-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px; /* Ensure consistent spacing between items */
-  padding: 10px;
+  gap: 6px;
+  padding: 16px;
 }
 
-/* Search Input */
 .search-input {
-  /* flex: 1; */
-  padding: 10px;
+  padding: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   transition: border-color 0.3s ease;
 }
 
@@ -160,7 +155,11 @@
   border-color: #007bff;
 }
 
-/* Favorite Toggle Button */
+.my-templates-search-input {
+  margin-left: auto;
+}
+
+
 .favorite-toggle-button {
   padding: 8px 16px;
   background-color: #007bff;
@@ -175,13 +174,13 @@
   background-color: #0056b3;
 }
 
-/* Cards Layout */
+
 .cards-container {
   display: flex;
-  gap: 10px;
+  gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .card {
@@ -217,7 +216,7 @@
   font-size: 12px;
 }
 
-/* Card Overlay */
+
 .card-overlay {
   position: absolute;
   bottom: 0;
@@ -242,7 +241,7 @@
   background: transparent;
   border: none;
   color: white;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 4px;
@@ -257,11 +256,24 @@
   background: rgb(255, 0, 0);
 }
 
-/* Media Queries for Responsiveness */
+
+.no-templates-message {
+  text-align: center;
+  font-size: 24px;
+  color: #080808;
+  margin-top: 20px;
+}
+
+.no-templates-message-info {
+  text-align: center;
+  font-size: 12px;
+  color: #5b5858;
+}
+
 @media (max-width: 768px) {
   .App {
     margin-left: 0;
-    padding: 20px;
+    padding: 16px;
   }
 
   .modal-content {
@@ -272,7 +284,7 @@
   .options-container {
     flex-direction: column;
     align-items: stretch;
-    gap: 15px;
+    gap: 6px;
   }
 
   .search-input {
@@ -290,4 +302,11 @@
     width: 90%;
     height: auto;
   }
-}
+} 
+
+
+
+
+
+
+
