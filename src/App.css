@@ -79,7 +79,7 @@
 }
 
 .nav-name {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
 }
@@ -114,10 +114,41 @@
   color: #ff0000;
 }
 
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.filter-select {
+  padding: 8px 16px;
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  background-color: #fff; 
+  font-size: 18px; 
+  color: #333; 
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.filter-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+
+
 .close-button {
   background: transparent;
   border: none;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   color: #333;
@@ -136,7 +167,7 @@
 }
 
 .search-input {
-  padding: 16px;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
@@ -174,13 +205,13 @@
   justify-content: center;
   margin-top: 16px;
   max-height: 600px; 
-  overflow-y: auto;  /* Enable vertical scrolling when needed */
+  overflow-y: auto; 
   padding-right: 10px; 
 }
 
 .card {
   position: relative;
-  width: calc((100% / 3) - 30px); /* Default for large screens */
+  width: calc((100% / 3) - 30px);
   height: 200px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -264,6 +295,7 @@
 }
 
 /* For screens with a width of 1280px or less */
+
 @media (max-width: 1280px) {
   .card {
     width: calc((100% / 2) - 10px); /* Two cards per row */
