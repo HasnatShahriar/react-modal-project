@@ -294,18 +294,30 @@
   color: #5b5858;
 }
 
-/* For screens with a width of 1280px or less */
+
 
 @media (max-width: 1280px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .card {
-    width: calc((100% / 2) - 10px); /* Two cards per row */
+    width: 100%; 
   }
 }
 
-/* For screens with a width of 786px or less */
+
 @media (max-width: 786px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .card {
-    width: 100%; /* One card per row */
+    width: 100%;
   }
 }
 
