@@ -199,7 +199,7 @@
   background-color: #0056b3;
 }
 
-
+ 
 .cards-container {
   display: flex;
   gap: 30px; 
@@ -219,11 +219,10 @@
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -231,22 +230,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.pro-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: gold;
-  color: black;
-  padding: 2px 5px;
-  border-radius: 4px;
-  font-size: 12px;
+  transition: transform 0.3s ease; /* Smooth transition for scrolling */
 }
 
 .card-overlay {
   position: absolute;
-  bottom: 0;
+  bottom: -40px; /* Start below the card */
   left: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -255,13 +244,17 @@
   justify-content: space-around;
   align-items: center;
   height: 40px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: bottom 0.3s ease; /* Animate the position */
 }
 
 .card:hover .card-overlay {
-  opacity: 1;
+  bottom: 0; /* Move to the top of the stopping point */
 }
+
+.card:hover .card-image {
+  transform: translateY(-40px); /* Move the image up */
+}
+
 
 .btn-go-pro,
 .btn-favorite {
@@ -282,6 +275,8 @@
 .btn-favorite:hover {
   background: rgb(255, 0, 0);
 }
+
+
 
 .no-templates-message {
   text-align: center;
@@ -355,4 +350,18 @@
     width: 90%;
     height: auto;
   }
-}
+} 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
